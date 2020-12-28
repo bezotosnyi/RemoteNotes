@@ -2,7 +2,6 @@
 {
     public class User : BaseEntity
     {
-        public int AccountId { get; set; }
         public Account Account { get; set; }
 
         public string Login { get; set; }
