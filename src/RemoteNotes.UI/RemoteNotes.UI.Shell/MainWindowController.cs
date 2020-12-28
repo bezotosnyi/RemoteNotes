@@ -23,6 +23,7 @@ namespace RemoteNotes.UI.Shell
             _controlManager.Register("MainWindow", _mainWindow);
             _controlManager.Register("LoginControl", controlFactory.Create<LoginControl>());
             _controlManager.Register("RegisterControl", controlFactory.Create<RegisterControl>());
+            _controlManager.Register("DashboardControl", controlFactory.Create<DashboardControl>());
         }
 
         public void LoadLogin()
@@ -48,7 +49,8 @@ namespace RemoteNotes.UI.Shell
 
         public void LoadDashboard()
         {
-            throw new System.NotImplementedException();
+            _mainWindow.Height = 410;
+            _controlManager.Place("MainWindow", "MainRegion", "DashboardControl");
         }
 
         public void Exit() => _application.Exit();

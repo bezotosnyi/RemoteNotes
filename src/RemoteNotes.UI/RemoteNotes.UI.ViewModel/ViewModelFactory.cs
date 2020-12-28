@@ -18,6 +18,7 @@ namespace RemoteNotes.UI.ViewModel
 
             _viewModelCollection.Add(typeof(LoginViewModel), new LoginViewModel(_mainWindowController, frontServiceClient));
             _viewModelCollection.Add(typeof(RegisterViewModel), new RegisterViewModel(_mainWindowController, frontServiceClient));
+            _viewModelCollection.Add(typeof(DashboardViewModel), new DashboardViewModel(_mainWindowController, frontServiceClient));
         }
 
         public T Create<T>(IView view)

@@ -21,6 +21,10 @@ namespace RemoteNotes.UI.Control
             var registerControl = new RegisterControl();
             registerControl.DataContext = _viewModelFactory.Create<RegisterViewModel>(registerControl);
             _controlCollection.Add(typeof(RegisterControl), registerControl);
+
+            var dashboardControl = new DashboardControl();
+            dashboardControl.DataContext = _viewModelFactory.Create<DashboardViewModel>(dashboardControl);
+            _controlCollection.Add(typeof(DashboardControl), dashboardControl);
         }
 
         public T Create<T>()
