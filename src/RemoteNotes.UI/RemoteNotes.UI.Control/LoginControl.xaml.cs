@@ -16,7 +16,7 @@ namespace RemoteNotes.UI.Control
             InitializeComponent();
         }
 
-        public void SetFocus() => FocusManager.SetFocusedElement(this, LogInButton);
+        public void SetFocus() => FocusManager.SetFocusedElement(this, LoginNameTextBox);
 
         public void ClearError()
         {
