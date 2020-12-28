@@ -3,7 +3,7 @@ using RemoteNotes.Service.Domain.DTO;
 
 namespace RemoteNotes.Service.Client.Contract
 {
-    public interface IServiceClient
+    public interface IFrontServiceClient
     {
         UserDTO Login(string login, string password);
         UserDTO RegisterUser(UserDTO user);

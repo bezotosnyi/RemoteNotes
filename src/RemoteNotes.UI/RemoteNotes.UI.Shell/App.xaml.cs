@@ -1,17 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using RemoteNotes.Service.Client.Stub;
+using RemoteNotes.UI.Contract;
+using RemoteNotes.UI.Control;
+using RemoteNotes.UI.ViewModel;
 
 namespace RemoteNotes.UI.Shell
 {
     /// <summary>
     /// Логика взаимодействия для App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App : Application, IApplication
     {
+        private void AppStartUp(object sender, StartupEventArgs args)
+        {
+            var mainWindow = new MainWindow();
+            var controlManager = new ControlManager();
+            var mainWindowController = new MainWindowController(mainWindow, controlManager, this);
+
+            var frontServiceClient = new FrontServiceClientStub();
+
+            var viewModelFactory = new ViewModelFactory(mainWindowController, frontServiceClient);
+            var controlFactory = new ControlFactory(viewModelFactory);
+
+            mainWindowController.RegisterControls(controlFactory);
+            mainWindowController.LoadLogin();
+        }
+
+        private void AppExit(object sender, ExitEventArgs args)
+        {
+            Shutdown();
+        }
+
+        void IApplication.Exit()
+        {
+            Shutdown();
+        }
     }
 }

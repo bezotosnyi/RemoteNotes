@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>99d0a165-253c-4fd6-b53e-91ea8d9fb690</ProjectGuid>
+    <ProjectGuid>{99D0A165-253C-4FD6-B53E-91EA8D9FB690}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RemoteNotes.UI.ViewModel</RootNamespace>
@@ -31,24 +31,43 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LoginViewModel.cs" />
+    <Compile Include="ViewModelBase.cs" />
+    <Compile Include="ViewModelFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\RemoteNotes.Service.Client\RemoteNotes.Service.Client.Contract\RemoteNotes.Service.Client.Contract.csproj">
+      <Project>{ce82fdc8-6016-4219-bce0-45565a11fae6}</Project>
+      <Name>RemoteNotes.Service.Client.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RemoteNotes.Service.Client\RemoteNotes.Service.Client.Stub\RemoteNotes.Service.Client.Stub.csproj">
+      <Project>{e0a006f5-54bb-47d9-b326-638cc6238aa2}</Project>
+      <Name>RemoteNotes.Service.Client.Stub</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RemoteNotes.Service\RemoteNotes.Service.Domain\RemoteNotes.Service.Domain.csproj">
+      <Project>{2cd3d4ce-9e3f-42ce-bbd8-83c454f75aa9}</Project>
+      <Name>RemoteNotes.Service.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RemoteNotes.UI.Contract\RemoteNotes.UI.Contract.csproj">
+      <Project>{CD0B0DB8-631E-47BE-B072-CC7297B73878}</Project>
+      <Name>RemoteNotes.UI.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RemoteNotes.UI.Utility\RemoteNotes.UI.Utility.csproj">
+      <Project>{ebbfc353-4098-4908-a5f6-735d40cb37da}</Project>
+      <Name>RemoteNotes.UI.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>

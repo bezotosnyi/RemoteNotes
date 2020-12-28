@@ -5,7 +5,7 @@ using RemoteNotes.Service.Domain.DTO;
 
 namespace RemoteNotes.Service.Client.Stub
 {
-    public class ServiceClientStub : IServiceClient
+    public class FrontServiceClientStub : IFrontServiceClient
     {
         private static readonly UserDTO _adminUser = new UserDTO
         {
