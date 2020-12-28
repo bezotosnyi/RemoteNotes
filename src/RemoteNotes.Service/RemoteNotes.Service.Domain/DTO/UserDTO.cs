@@ -1,6 +1,6 @@
 ﻿namespace RemoteNotes.Service.Domain.DTO
 {
-    public class UserDTO
+    public class UserDTO : BaseEntityDTO
     {
         public int Id { get; set; }
 

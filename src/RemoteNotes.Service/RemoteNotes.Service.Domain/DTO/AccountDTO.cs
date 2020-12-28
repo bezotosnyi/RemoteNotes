@@ -2,10 +2,8 @@
 
 namespace RemoteNotes.Service.Domain.DTO
 {
-    public class AccountDTO
+    public class AccountDTO : BaseEntityDTO
     {
-        public int Id { get; set; }
-
         public DateTime CreateTime { get; set; }
 
         public DateTime ModifyTime { get; set; }

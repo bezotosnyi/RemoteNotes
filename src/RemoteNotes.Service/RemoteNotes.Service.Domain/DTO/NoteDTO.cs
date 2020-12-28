@@ -2,10 +2,8 @@
 
 namespace RemoteNotes.Service.Domain.DTO
 {
-    public class NoteDTO
+    public class NoteDTO : BaseEntityDTO
     {
-        public int Id { get; set; }
-
         public string Title { get; set; }
 
         public AccountDTO Account { get; set; }
