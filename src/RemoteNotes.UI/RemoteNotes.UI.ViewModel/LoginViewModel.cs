@@ -17,8 +17,8 @@ namespace RemoteNotes.UI.ViewModel
             DependencyProperty.Register("Password", typeof(string),
                 typeof(LoginViewModel), new PropertyMetadata(null));
 
-        private RelayCommand _loginCommand;
-        private RelayCommand _signUpCommand;
+        private ICommand _loginCommand;
+        private ICommand _signUpCommand;
 
         public LoginViewModel(IMainWindowController mainWindowController, IFrontServiceClient frontServiceClient) :
             base(mainWindowController, frontServiceClient)

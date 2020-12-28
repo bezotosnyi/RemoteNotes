@@ -134,9 +134,9 @@
                 Grid.Row="8"
                 Grid.Column="1"
                 Margin="0,0,0,5"
-                materialDesignThemes:HintAssist.Hint="Login Name"
+                materialDesignThemes:HintAssist.Hint="Login"
                 Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
-                Text="{Binding Path=LoginName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True, Mode=TwoWay}" />
+                Text="{Binding Path=Login, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True, Mode=TwoWay}" />
 
             <PasswordBox
                 x:Name="PasswordBox"
