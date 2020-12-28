@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IApplication.cs" />
-    <Compile Include="ICommand.cs" />
     <Compile Include="IControlFactory.cs" />
     <Compile Include="IDataErrorInfo.cs" />
     <Compile Include="IFactory.cs" />

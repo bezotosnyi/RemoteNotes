@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Input;
 using RemoteNotes.Service.Client.Contract;
 using RemoteNotes.UI.Contract;
 using RemoteNotes.UI.Utility;

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Input;
-using ICommand = RemoteNotes.UI.Contract.ICommand;
 
 namespace RemoteNotes.UI.Utility
 {
