@@ -9,6 +9,7 @@ namespace RemoteNotes.UI.Shell
         private readonly Window _mainWindow;
         private readonly ControlManager _controlManager;
         private readonly IApplication _application;
+        private bool _mainWindowShown;
 
         public MainWindowController(Window mainWindow, ControlManager controlManager, IApplication application)
         {
@@ -21,21 +22,28 @@ namespace RemoteNotes.UI.Shell
         {
             _controlManager.Register("MainWindow", _mainWindow);
             _controlManager.Register("LoginControl", controlFactory.Create<LoginControl>());
+            _controlManager.Register("RegisterControl", controlFactory.Create<RegisterControl>());
         }
 
         public void LoadLogin()
         {
-            _mainWindow.WindowStyle = WindowStyle.None;
-            _mainWindow.WindowState = WindowState.Normal;
-            _mainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            _mainWindow.Show();
+            if (!_mainWindowShown)
+            {
+                _mainWindow.WindowStyle = WindowStyle.None;
+                _mainWindow.WindowState = WindowState.Normal;
+                _mainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                _mainWindow.Show();
+                _mainWindowShown = true;
+            }
 
+            _mainWindow.Height = 410;
             _controlManager.Place("MainWindow", "MainRegion", "LoginControl");
         }
 
         public void LoadRegister()
         {
-            throw new System.NotImplementedException();
+            _mainWindow.Height = 660;
+            _controlManager.Place("MainWindow", "MainRegion", "RegisterControl");
         }
 
         public void LoadDashboard()

@@ -17,6 +17,10 @@ namespace RemoteNotes.UI.Control
             var loginControl = new LoginControl();
             loginControl.DataContext = _viewModelFactory.Create<LoginViewModel>(loginControl);
             _controlCollection.Add(typeof(LoginControl), loginControl);
+
+            var registerControl = new RegisterControl();
+            registerControl.DataContext = _viewModelFactory.Create<RegisterViewModel>(registerControl);
+            _controlCollection.Add(typeof(RegisterControl), registerControl);
         }
 
         public T Create<T>()
