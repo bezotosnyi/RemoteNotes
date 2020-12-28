@@ -48,7 +48,7 @@ namespace RemoteNotes.UI.ViewModel
             try
             {
                 var user = _frontServiceClient.Login(LoginName, Password);
-                CacheManager.Instance.AddOrUpdateCache("user", user);
+                CacheManager.Instance.AddOrUpdateCache("account", user.Account);
                 _mainWindowController.LoadDashboard();
             }
             catch (Exception ex)
