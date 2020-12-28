@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RemoteNotes.DAL.Configurations;
 using RemoteNotes.DAL.Core.Entities;
 
 namespace RemoteNotes.DAL
@@ -19,6 +20,9 @@ namespace RemoteNotes.DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new AccountConfiguration());
+            modelBuilder.ApplyConfiguration(new NoteConfiguration());
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
         }
     }
 }
