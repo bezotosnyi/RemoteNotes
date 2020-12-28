@@ -1,0 +1,24 @@
+﻿using System;
+using System.Linq;
+using System.Linq.Expressions;
+using RemoteNotes.DAL.Core.Entities;
+
+namespace RemoteNotes.DAL.Contact
+{
+    public interface IRepository<TEntity> : IDisposable where TEntity : BaseEntity
+    {
+        IQueryable<TEntity> FindAll(bool trackChanges);
+
+        IQueryable<TEntity> FindByCondition(Expression<Func<TEntity, bool>> filter, bool trackChanges);
+
+        TEntity FindById(object id);
+
+        void Insert(TEntity entity);
+
+        void Delete(object id);
+
+        void Delete(TEntity entityToDelete);
+
+        void Update(TEntity entityToUpdate);
+    }
+}
