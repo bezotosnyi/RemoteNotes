@@ -30,7 +30,6 @@ namespace RemoteNotes.UI.Shell
         {
             if (!_mainWindowShown)
             {
-                _mainWindow.WindowStyle = WindowStyle.None;
                 _mainWindow.WindowState = WindowState.Normal;
                 _mainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 _mainWindow.Show();
