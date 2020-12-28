@@ -27,7 +27,7 @@ namespace RemoteNotes.Service.Client.Stub
         private readonly List<NoteDTO> _notes = new List<NoteDTO>();
 
         public UserDTO Login(string login, string password) =>
-            _users.FirstOrDefault(_ => _.Login.Equals(login) && _.Password.Equals(password));
+            _users.First(_ => _.Login.Equals(login) && _.Password.Equals(password));
 
         public UserDTO RegisterUser(UserDTO user)
         {
