@@ -11,7 +11,7 @@ namespace RemoteNotes.Service.Front.Contract
     {
         [WebInvoke(
             Method = "PUT",
-            UriTemplate = "/api/remotenotes/account/login",
+            UriTemplate = "/api/remotenotes/account/login?login={login}&password={password}",
             BodyStyle = WebMessageBodyStyle.Bare,
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json)]
@@ -47,7 +47,7 @@ namespace RemoteNotes.Service.Front.Contract
 
         [WebInvoke(
             Method = "DELETE",
-            UriTemplate = "/api/remotenotes/notes",
+            UriTemplate = "/api/remotenotes/notes?noteId={noteId}",
             BodyStyle = WebMessageBodyStyle.Bare,
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json)]
@@ -56,7 +56,7 @@ namespace RemoteNotes.Service.Front.Contract
 
         [WebInvoke(
             Method = "GET",
-            UriTemplate = "/api/remotenotes/notes",
+            UriTemplate = "/api/remotenotes/notes?accountId={accountId}",
             BodyStyle = WebMessageBodyStyle.Bare,
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json)]
