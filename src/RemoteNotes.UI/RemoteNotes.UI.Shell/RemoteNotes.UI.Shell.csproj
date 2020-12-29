@@ -47,7 +47,9 @@
       <HintPath>..\..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -116,9 +118,21 @@
       <Project>{CE82FDC8-6016-4219-BCE0-45565A11FAE6}</Project>
       <Name>RemoteNotes.Service.Client.Contract</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\RemoteNotes.Service.Client\RemoteNotes.Service.Client.Front\RemoteNotes.Service.Client.Front.csproj">
+      <Project>{D98C55DB-B241-4120-97FC-05E066688F04}</Project>
+      <Name>RemoteNotes.Service.Client.Front</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\RemoteNotes.Service.Client\RemoteNotes.Service.Client.Stub\RemoteNotes.Service.Client.Stub.csproj">
       <Project>{E0A006F5-54BB-47D9-B326-638CC6238AA2}</Project>
       <Name>RemoteNotes.Service.Client.Stub</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RemoteNotes.Service.Client\RemoteNotes.Service.Client\RemoteNotes.Service.Client.csproj">
+      <Project>{5a7a4442-9c67-417e-8e72-d6e21c403eba}</Project>
+      <Name>RemoteNotes.Service.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RemoteNotes.Service\RemoteNotes.Service.Front.Contract\RemoteNotes.Service.Front.Contract.csproj">
+      <Project>{DA0524A3-F190-422B-8733-CCB2122C4E99}</Project>
+      <Name>RemoteNotes.Service.Front.Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\RemoteNotes.UI.Contract\RemoteNotes.UI.Contract.csproj">
       <Project>{cd0b0db8-631e-47be-b072-cc7297b73878}</Project>

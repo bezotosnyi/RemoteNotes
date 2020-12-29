@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System.Configuration;
+using System.Windows;
+using RemoteNotes.Service.Client;
+using RemoteNotes.Service.Client.Front;
 using RemoteNotes.Service.Client.Stub;
 using RemoteNotes.UI.Contract;
 using RemoteNotes.UI.Control;
@@ -17,7 +20,9 @@ namespace RemoteNotes.UI.Shell
             var controlManager = new ControlManager();
             var mainWindowController = new MainWindowController(mainWindow, controlManager, this);
 
-            var frontServiceClient = new FrontServiceClientStub();
+            // var frontServiceClient = new FrontServiceClientStub();
+            var remoteNotesClient = new RemoteNotesClient(ConfigurationManager.AppSettings["uri"]);
+            var frontServiceClient = new FrontServiceClient(remoteNotesClient);
 
             var viewModelFactory = new ViewModelFactory(mainWindowController, frontServiceClient);
             var controlFactory = new ControlFactory(viewModelFactory);

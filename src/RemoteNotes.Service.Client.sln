@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteNotes.Service.Client.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteNotes.Service.Client.Stub", "RemoteNotes.Service.Client\RemoteNotes.Service.Client.Stub\RemoteNotes.Service.Client.Stub.csproj", "{E0A006F5-54BB-47D9-B326-638CC6238AA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteNotes.Service.Client.Front", "RemoteNotes.Service.Client\RemoteNotes.Service.Client.Front\RemoteNotes.Service.Client.Front.csproj", "{D98C55DB-B241-4120-97FC-05E066688F04}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteNotes.Service.Client", "RemoteNotes.Service.Client\RemoteNotes.Service.Client\RemoteNotes.Service.Client.csproj", "{5A7A4442-9C67-417E-8E72-D6E21C403EBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteNotes.Service.Client.Front", "RemoteNotes.Service.Client\RemoteNotes.Service.Client.Front\RemoteNotes.Service.Client.Front.csproj", "{D98C55DB-B241-4120-97FC-05E066688F04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,18 +45,6 @@ Global
 		{E0A006F5-54BB-47D9-B326-638CC6238AA2}.Release|x64.Build.0 = Release|Any CPU
 		{E0A006F5-54BB-47D9-B326-638CC6238AA2}.Release|x86.ActiveCfg = Release|Any CPU
 		{E0A006F5-54BB-47D9-B326-638CC6238AA2}.Release|x86.Build.0 = Release|Any CPU
-		{D98C55DB-B241-4120-97FC-05E066688F04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D98C55DB-B241-4120-97FC-05E066688F04}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D98C55DB-B241-4120-97FC-05E066688F04}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{D98C55DB-B241-4120-97FC-05E066688F04}.Debug|x64.Build.0 = Debug|Any CPU
-		{D98C55DB-B241-4120-97FC-05E066688F04}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{D98C55DB-B241-4120-97FC-05E066688F04}.Debug|x86.Build.0 = Debug|Any CPU
-		{D98C55DB-B241-4120-97FC-05E066688F04}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D98C55DB-B241-4120-97FC-05E066688F04}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D98C55DB-B241-4120-97FC-05E066688F04}.Release|x64.ActiveCfg = Release|Any CPU
-		{D98C55DB-B241-4120-97FC-05E066688F04}.Release|x64.Build.0 = Release|Any CPU
-		{D98C55DB-B241-4120-97FC-05E066688F04}.Release|x86.ActiveCfg = Release|Any CPU
-		{D98C55DB-B241-4120-97FC-05E066688F04}.Release|x86.Build.0 = Release|Any CPU
 		{5A7A4442-9C67-417E-8E72-D6E21C403EBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5A7A4442-9C67-417E-8E72-D6E21C403EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A7A4442-9C67-417E-8E72-D6E21C403EBA}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -69,6 +57,18 @@ Global
 		{5A7A4442-9C67-417E-8E72-D6E21C403EBA}.Release|x64.Build.0 = Release|Any CPU
 		{5A7A4442-9C67-417E-8E72-D6E21C403EBA}.Release|x86.ActiveCfg = Release|Any CPU
 		{5A7A4442-9C67-417E-8E72-D6E21C403EBA}.Release|x86.Build.0 = Release|Any CPU
+		{D98C55DB-B241-4120-97FC-05E066688F04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D98C55DB-B241-4120-97FC-05E066688F04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D98C55DB-B241-4120-97FC-05E066688F04}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D98C55DB-B241-4120-97FC-05E066688F04}.Debug|x64.Build.0 = Debug|Any CPU
+		{D98C55DB-B241-4120-97FC-05E066688F04}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D98C55DB-B241-4120-97FC-05E066688F04}.Debug|x86.Build.0 = Debug|Any CPU
+		{D98C55DB-B241-4120-97FC-05E066688F04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D98C55DB-B241-4120-97FC-05E066688F04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D98C55DB-B241-4120-97FC-05E066688F04}.Release|x64.ActiveCfg = Release|Any CPU
+		{D98C55DB-B241-4120-97FC-05E066688F04}.Release|x64.Build.0 = Release|Any CPU
+		{D98C55DB-B241-4120-97FC-05E066688F04}.Release|x86.ActiveCfg = Release|Any CPU
+		{D98C55DB-B241-4120-97FC-05E066688F04}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
