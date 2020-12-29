@@ -9,46 +9,46 @@ namespace RemoteNotes.Service.Client
 {
     public class FrontServiceClient : IFrontServiceClient
     {
-        private readonly IRemoteNotesService _remoteNotesService;
+        private readonly IRemoteNotesService _remoteNotesClient;
 
-        public FrontServiceClient(IRemoteNotesService remoteNotesService)
+        public FrontServiceClient(IRemoteNotesService remoteNotesClient)
         {
-            _remoteNotesService = remoteNotesService;
+            _remoteNotesClient = remoteNotesClient;
         }
 
         public UserDTO Login(string login, string password)
         {
-            var operationStatusInfo = _remoteNotesService.Login(login, password);
+            var operationStatusInfo = _remoteNotesClient.Login(login, password);
             return GetAttachedObject(operationStatusInfo);
         }
 
         public UserDTO RegisterUser(UserDTO user)
         {
-            var operationStatusInfo = _remoteNotesService.Registration(user);
+            var operationStatusInfo = _remoteNotesClient.Registration(user);
             return GetAttachedObject(operationStatusInfo);
         }
 
         public NoteDTO AddNote(NoteDTO note)
         {
-            var operationStatusInfo = _remoteNotesService.AddNote(note);
+            var operationStatusInfo = _remoteNotesClient.AddNote(note);
             return GetAttachedObject(operationStatusInfo);
         }
 
         public NoteDTO EditNote(NoteDTO note)
         {
-            var operationStatusInfo = _remoteNotesService.EditNote(note);
+            var operationStatusInfo = _remoteNotesClient.EditNote(note);
             return GetAttachedObject(operationStatusInfo);
         }
 
         public bool DeleteNote(int noteId)
         {
-            var operationStatusInfo = _remoteNotesService.DeleteNote(noteId);
+            var operationStatusInfo = _remoteNotesClient.DeleteNote(noteId);
             return GetAttachedObject(operationStatusInfo);
         }
 
         public List<NoteDTO> GetNotes(int accountId)
         {
-            var operationStatusInfo = _remoteNotesService.GetNotes(accountId);
+            var operationStatusInfo = _remoteNotesClient.GetNotes(accountId);
             return GetAttachedObject(operationStatusInfo);
         }
 
