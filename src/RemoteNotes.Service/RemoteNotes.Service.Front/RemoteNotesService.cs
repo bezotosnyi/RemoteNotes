@@ -11,7 +11,15 @@ namespace RemoteNotes.Service.Front
     {
         public OperationStatusInfo<UserDTO> Login(string login, string password)
         {
-            throw new System.NotImplementedException();
+            return new OperationStatusInfo<UserDTO>
+            {
+                AttachedObject = new UserDTO
+                {
+                    Login = login,
+                    Password = password
+                },
+                OperationStatus = OperationStatus.Success
+            };
         }
 
         public OperationStatusInfo<UserDTO> Registration(UserDTO user)

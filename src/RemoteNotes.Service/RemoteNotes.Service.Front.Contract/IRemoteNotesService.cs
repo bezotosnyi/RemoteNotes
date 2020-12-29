@@ -10,7 +10,7 @@ namespace RemoteNotes.Service.Front.Contract
     public interface IRemoteNotesService
     {
         [WebInvoke(
-            Method = "PUT",
+            Method = "POST", // https://stackoverflow.com/a/5868860
             UriTemplate = "/api/remotenotes/account/login?login={login}&password={password}",
             BodyStyle = WebMessageBodyStyle.Bare,
             RequestFormat = WebMessageFormat.Json,
