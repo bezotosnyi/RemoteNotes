@@ -15,7 +15,7 @@ namespace RemoteNotes.DAL.Configurations
 
             builder.HasOne(o => o.Account)
                 .WithMany()
-                .HasForeignKey(fk => fk.AccountId)
+                .HasForeignKey(fk => fk.UserId)
                 .IsRequired();
 
             builder.Property(p => p.Title)
@@ -25,10 +25,12 @@ namespace RemoteNotes.DAL.Configurations
                 .HasMaxLength(255)
                 .IsRequired();
 
+            builder.Property(p => p.Image);
+
             builder.Property(p => p.PublishTime).IsRequired();
             builder.Property(p => p.ModifyTime);
 
-            builder.Property(p => p.Image).HasColumnType("blob");
+            builder.HasIndex(i => new { i.Id, i.UserId });
         }
     }
 }

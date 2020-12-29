@@ -25,10 +25,7 @@ namespace RemoteNotes.DAL.Configurations
                 .HasMaxLength(255)
                 .IsRequired();
 
-            builder.Property(p => p.IsActive)
-                .HasColumnType("bit")
-                .HasDefaultValue("1")
-                .IsRequired();
+            builder.Property(p => p.IsActive).IsRequired();
         }
     }
 }

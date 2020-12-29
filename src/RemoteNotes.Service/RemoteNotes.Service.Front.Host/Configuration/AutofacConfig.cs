@@ -1,4 +1,5 @@
-﻿using Autofac;
+﻿using System.Configuration;
+using Autofac;
 using Microsoft.EntityFrameworkCore;
 using RemoteNotes.DAL;
 using RemoteNotes.DAL.Contact;
@@ -15,7 +16,13 @@ namespace RemoteNotes.Service.Front.Host.Configuration
             var containerBuilder = new ContainerBuilder();
 
             // DAL dependencies
-            /*containerBuilder.RegisterType<RemoteNotesDbContext>().As<DbContext>();
+            var connectionString = ConfigurationManager.ConnectionStrings["MsSqlConnectionConnectionString"].ConnectionString;
+            var options = new DbContextOptionsBuilder<RemoteNotesDbContext>()
+                .UseSqlServer(connectionString)
+                .Options;
+
+            containerBuilder.RegisterType<RemoteNotesDbContext>().As<DbContext>()
+                .WithParameter(new TypedParameter(typeof(DbContextOptions<RemoteNotesDbContext>), options));
             containerBuilder.RegisterGeneric(typeof(RepositoryBase<>)).As(typeof(IRepository<>));
             containerBuilder.RegisterType<AccountRepository>().As<IRepository<Account>>();
             containerBuilder.RegisterType<AccountRepository>().As<IAccountRepository>();
@@ -23,7 +30,7 @@ namespace RemoteNotes.Service.Front.Host.Configuration
             containerBuilder.RegisterType<NoteRepository>().As<INoteRepository>();
             containerBuilder.RegisterType<UserRepository>().As<IRepository<User>>();
             containerBuilder.RegisterType<UserRepository>().As<IUserRepository>();
-            containerBuilder.RegisterType<UnitOfWork>().As<IUnitOfWork>();*/
+            containerBuilder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
 
             // BLL dependencies
 

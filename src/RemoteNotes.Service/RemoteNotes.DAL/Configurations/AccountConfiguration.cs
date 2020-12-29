@@ -8,14 +8,8 @@ namespace RemoteNotes.DAL.Configurations
     {
         public void Configure(EntityTypeBuilder<Account> builder)
         {
-            builder.HasKey(pk => pk.Id);
-            builder.Property(p => p.Id)
-                .HasColumnName("AccountId")
-                .ValueGeneratedOnAdd();
-
-            builder.Property(p => p.CreateTime).IsRequired();
-            builder.Property(p => p.ModifyTime);
-            builder.Property(p => p.Birthday).IsRequired();
+            builder.Ignore(p => p.Id);
+            builder.HasKey(pk => pk.UserId);
 
             builder.Property(p => p.FirstName)
                 .HasMaxLength(50)
@@ -26,12 +20,15 @@ namespace RemoteNotes.DAL.Configurations
             builder.Property(p => p.Nickname)
                 .HasMaxLength(50)
                 .IsRequired();
-
             builder.Property(p => p.Email)
                 .HasMaxLength(100)
                 .IsRequired();
 
-            builder.Property(p => p.Photo).HasColumnType("blob");
+            builder.Property(p => p.Birthday).IsRequired();
+            builder.Property(p => p.Photo);
+
+            builder.Property(p => p.CreateTime).IsRequired();
+            builder.Property(p => p.ModifyTime);
         }
     }
 }

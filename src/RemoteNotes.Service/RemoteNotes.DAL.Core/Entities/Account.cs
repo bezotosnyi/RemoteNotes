@@ -4,11 +4,8 @@ namespace RemoteNotes.DAL.Core.Entities
 {
     public class Account : BaseEntity
     {
-        public DateTime CreateTime { get; set; }
-
-        public DateTime ModifyTime { get; set; }
-
-        public byte[] Photo { get; set; }
+        public int UserId { get; set; }
+        public User User { get; set; }
 
         public string FirstName { get; set; }
 
@@ -16,11 +13,14 @@ namespace RemoteNotes.DAL.Core.Entities
 
         public string Nickname { get; set; }
 
-        public DateTime Birthday { get; set; }
-
         public string Email { get; set; }
 
-        public int UserId { get; set; }
-        public User User { get; set; }
+        public DateTime Birthday { get; set; }
+
+        public byte[] Photo { get; set; }
+
+        public DateTime CreateTime { get; set; }
+
+        public DateTime ModifyTime { get; set; }
     }
 }
