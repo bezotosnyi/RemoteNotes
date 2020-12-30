@@ -53,6 +53,7 @@ namespace RemoteNotes.Logging
                 MaximumFileSize = "5MB",
                 RollingStyle = RollingFileAppender.RollingMode.Size
             };
+
             rollingFileAppender.ActivateOptions();
             hierarchy.Root.AddAppender(rollingFileAppender);
             hierarchy.Configured = true;
