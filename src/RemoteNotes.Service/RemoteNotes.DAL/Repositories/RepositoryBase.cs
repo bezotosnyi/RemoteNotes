@@ -16,13 +16,13 @@ namespace RemoteNotes.DAL.Repositories
             RepositoryContext = repositoryContext ?? throw new ArgumentNullException(nameof(repositoryContext));
         }
 
-        public IQueryable<TEntity> FindAll(bool trackChanges) =>
+        public IQueryable<TEntity> FindAll(bool trackChanges = false) =>
             !trackChanges
                 ? RepositoryContext.Set<TEntity>()
                     .AsNoTracking()
                 : RepositoryContext.Set<TEntity>();
 
-        public IQueryable<TEntity> FindByCondition(Expression<Func<TEntity, bool>> filter, bool trackChanges) =>
+        public IQueryable<TEntity> FindByCondition(Expression<Func<TEntity, bool>> filter, bool trackChanges = false) =>
             !trackChanges
                 ? RepositoryContext.Set<TEntity>()
                     .Where(filter)
