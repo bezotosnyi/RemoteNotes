@@ -29,7 +29,7 @@ namespace RemoteNotes.Service.Front.Host.Configuration
                 .Options;
 
             containerBuilder.RegisterType<RemoteNotesDbContext>().As<DbContext>()
-                .WithParameter(new TypedParameter(typeof(DbContextOptions<RemoteNotesDbContext>), options));
+                .WithParameter(new TypedParameter(typeof(DbContextOptions<RemoteNotesDbContext>), options)).InstancePerRequest();
             containerBuilder.RegisterGeneric(typeof(RepositoryBase<>)).As(typeof(IRepository<>));
             containerBuilder.RegisterType<AccountRepository>().As<IRepository<Account>>();
             containerBuilder.RegisterType<AccountRepository>().As<IAccountRepository>();

@@ -122,7 +122,7 @@ namespace RemoteNotes.UI.ViewModel
                 {
                     Account = new AccountDTO
                     {
-                        Photo = File.ReadAllBytes(_imagePath),
+                        Photo = _imagePath != null ? File.ReadAllBytes(_imagePath) : null,
                         FirstName = FirstName,
                         LastName = LastName,
                         Nickname = NickName,
@@ -133,6 +133,8 @@ namespace RemoteNotes.UI.ViewModel
                     Password = Password
                 };
 
+                user.Account.CreateTime = DateTime.Now;
+                user.Account.ModifyTime = DateTime.Now;
                 _frontServiceClient.RegisterUser(user);
                 _mainWindowController.LoadLogin();
             }

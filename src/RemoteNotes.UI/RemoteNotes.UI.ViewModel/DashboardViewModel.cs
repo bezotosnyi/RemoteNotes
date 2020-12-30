@@ -115,6 +115,7 @@ namespace RemoteNotes.UI.ViewModel
                 ModifyTime = DateTime.Now
             };
 
+            note.PublishTime = DateTime.Now;
             _frontServiceClient.EditNote(note);
             LoadNotes();
         }
