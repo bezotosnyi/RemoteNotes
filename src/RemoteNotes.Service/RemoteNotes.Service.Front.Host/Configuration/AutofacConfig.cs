@@ -4,7 +4,7 @@ using AutoMapper.Contrib.Autofac.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using RemoteNotes.DAL;
 using RemoteNotes.DAL.Contact;
-using RemoteNotes.DAL.Core.Entities;
+using RemoteNotes.DAL.Domain.Entities;
 using RemoteNotes.DAL.Repositories;
 using RemoteNotes.Service.Front.Contract;
 

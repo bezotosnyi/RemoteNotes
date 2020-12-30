@@ -1,4 +1,4 @@
-﻿using RemoteNotes.DAL.Core.Entities;
+﻿using RemoteNotes.DAL.Domain.Entities;
 
 namespace RemoteNotes.DAL.Contact
 {

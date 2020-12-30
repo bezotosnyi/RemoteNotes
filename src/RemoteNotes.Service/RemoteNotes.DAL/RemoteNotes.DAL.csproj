@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RemoteNotes.DAL.Contact\RemoteNotes.DAL.Contact.csproj" />
-    <ProjectReference Include="..\RemoteNotes.DAL.Core\RemoteNotes.DAL.Core.csproj" />
   </ItemGroup>
 
 </Project>

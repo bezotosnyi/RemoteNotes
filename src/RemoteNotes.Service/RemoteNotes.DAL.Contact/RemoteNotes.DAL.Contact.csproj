@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RemoteNotes.DAL.Core\RemoteNotes.DAL.Core.csproj" />
+    <ProjectReference Include="..\RemoteNotes.DAL.Domain\RemoteNotes.DAL.Domain.csproj" />
   </ItemGroup>
 
 </Project>

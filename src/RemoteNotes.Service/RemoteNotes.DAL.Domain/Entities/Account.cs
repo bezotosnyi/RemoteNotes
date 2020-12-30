@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RemoteNotes.DAL.Core.Entities
+namespace RemoteNotes.DAL.Domain.Entities
 {
     public class Account : BaseEntity
     {

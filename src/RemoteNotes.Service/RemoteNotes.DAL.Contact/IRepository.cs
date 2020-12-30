@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
-using RemoteNotes.DAL.Core.Entities;
+using RemoteNotes.DAL.Domain.Entities;
 
 namespace RemoteNotes.DAL.Contact
 {

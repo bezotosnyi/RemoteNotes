@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RemoteNotes.DAL.Configurations;
-using RemoteNotes.DAL.Core.Entities;
+using RemoteNotes.DAL.Domain.Entities;
 
 namespace RemoteNotes.DAL
 {

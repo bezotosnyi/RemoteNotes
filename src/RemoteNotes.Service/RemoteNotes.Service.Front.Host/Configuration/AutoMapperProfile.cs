@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using RemoteNotes.DAL.Core.Entities;
+using RemoteNotes.DAL.Domain.Entities;
 using RemoteNotes.Service.Domain.DTO;
 
 namespace RemoteNotes.Service.Front.Host.Configuration
