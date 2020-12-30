@@ -27,7 +27,10 @@ namespace RemoteNotes.DAL.Configurations
             builder.Property(p => p.Birthday).IsRequired();
             builder.Property(p => p.Photo);
 
-            builder.Property(p => p.CreateTime).IsRequired();
+            builder.Property(p => p.CreateTime)
+                .HasDefaultValueSql("getdate()")
+                .IsRequired();
+
             builder.Property(p => p.ModifyTime);
         }
     }

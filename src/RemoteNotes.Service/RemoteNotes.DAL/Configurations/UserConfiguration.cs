@@ -25,7 +25,9 @@ namespace RemoteNotes.DAL.Configurations
                 .HasMaxLength(255)
                 .IsRequired();
 
-            builder.Property(p => p.IsActive).IsRequired();
+            builder.Property(p => p.IsActive)
+                .HasDefaultValueSql("1")
+                .IsRequired();
         }
     }
 }

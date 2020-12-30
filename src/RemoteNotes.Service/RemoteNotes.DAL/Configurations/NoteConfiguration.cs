@@ -27,7 +27,9 @@ namespace RemoteNotes.DAL.Configurations
 
             builder.Property(p => p.Image);
 
-            builder.Property(p => p.PublishTime).IsRequired();
+            builder.Property(p => p.PublishTime)
+                .HasDefaultValueSql("getdate()")
+                .IsRequired();
             builder.Property(p => p.ModifyTime);
 
             builder.HasIndex(i => new { i.Id, i.UserId });
