@@ -3,7 +3,9 @@ using System.Configuration;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.ServiceModel.Web;
+using Autofac;
 using Autofac.Integration.Wcf;
+using RemoteNotes.Logging.Contract;
 using RemoteNotes.Service.Front.Contract;
 using RemoteNotes.Service.Front.Host.Configuration;
 
@@ -22,24 +24,25 @@ namespace RemoteNotes.Service.Front.Host
                         serviceHost.AddServiceEndpoint(typeof(IRemoteNotesService), new WebHttpBinding(), uri);
                     serviceEndpoint.Behaviors.Add(new WebHttpBehavior());
 
+                    var logger = container.Resolve<IRemoteNotesLogger<Program>>();
+
                     try
                     {
                         serviceHost.AddDependencyInjectionBehavior<IRemoteNotesService>(container);
                         serviceHost.Open();
 
-                        var message = $"Service {uri} was running.";
-                        Console.WriteLine(message);
+                        logger.Info($"Service {uri} was running.");
 
                         Console.WriteLine("Press any key to exit...");
                         Console.ReadKey();
 
                         serviceHost.Close();
-                        Console.WriteLine($"Service {uri} was stopped.");
+                        logger.Info($"Service {uri} was stopped.");
+
                     }
-                    catch (Exception exception)
+                    catch (Exception ex)
                     {
-                        var message = $"The following exception was thrown: '{exception.Message}'. Stack trace: '{exception.StackTrace}'.";
-                        Console.WriteLine(message);
+                        logger.Error($"The following exception was thrown: '{ex.Message}'. Stack trace: '{ex.StackTrace}'.");
 
                         Console.WriteLine("Press any key to exit...");
                         Console.ReadKey();

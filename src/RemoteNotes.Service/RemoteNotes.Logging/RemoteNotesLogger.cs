@@ -40,9 +40,15 @@ namespace RemoteNotes.Logging
         {
             var hierarchy = (Hierarchy)LogManager.GetRepository();
 
-            var patternLayout = new PatternLayout();
-            patternLayout.ConversionPattern = "%date [%thread] %-5level %logger - %message%newline";
+            var patternLayout = new PatternLayout
+            {
+                ConversionPattern = "%date [%thread] %-5level %logger - %message%newline"
+            };
+
             patternLayout.ActivateOptions();
+
+            var consoleAppender = new ConsoleAppender { Layout = patternLayout };
+            consoleAppender.ActivateOptions();
 
             var rollingFileAppender = new RollingFileAppender
             {
@@ -55,7 +61,9 @@ namespace RemoteNotes.Logging
             };
 
             rollingFileAppender.ActivateOptions();
+
             hierarchy.Root.AddAppender(rollingFileAppender);
+            hierarchy.Root.AddAppender(consoleAppender);
             hierarchy.Configured = true;
         }
     }
