@@ -6,6 +6,8 @@ using RemoteNotes.DAL;
 using RemoteNotes.DAL.Contact;
 using RemoteNotes.DAL.Domain.Entities;
 using RemoteNotes.DAL.Repositories;
+using RemoteNotes.Logging;
+using RemoteNotes.Logging.Contract;
 using RemoteNotes.Service.Front.Contract;
 
 namespace RemoteNotes.Service.Front.Host.Configuration
@@ -37,6 +39,9 @@ namespace RemoteNotes.Service.Front.Host.Configuration
 
             // AutoMapper
             containerBuilder.RegisterAutoMapper(expression => expression.AddProfile(new AutoMapperProfile()));
+
+            // logger
+            containerBuilder.RegisterGeneric(typeof(RemoteNotesLogger<>)).As(typeof(IRemoteNotesLogger<>));
 
             // WCF
             containerBuilder.RegisterType<RemoteNotesService>().As<IRemoteNotesService>();

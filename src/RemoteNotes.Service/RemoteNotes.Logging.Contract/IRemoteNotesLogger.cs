@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace RemoteNotes.BLL.Contract
+namespace RemoteNotes.Logging.Contract
 {
-    public interface ILoggingService
+    public interface IRemoteNotesLogger<T>
     {
         void Debug(object message);
         void Debug(object message, Exception exception);

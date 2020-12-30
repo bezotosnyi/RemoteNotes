@@ -6,7 +6,13 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
-    <PackageReference Include="log4net" Version="2.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RemoteNotes.BLL.Contract\RemoteNotes.BLL.Contract.csproj" />
+    <ProjectReference Include="..\RemoteNotes.DAL.Contact\RemoteNotes.DAL.Contact.csproj" />
+    <ProjectReference Include="..\RemoteNotes.DAL.Domain\RemoteNotes.DAL.Domain.csproj" />
+    <ProjectReference Include="..\RemoteNotes.Logging.Contract\RemoteNotes.Logging.Contract.csproj" />
   </ItemGroup>
 
 </Project>

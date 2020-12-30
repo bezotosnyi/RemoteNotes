@@ -14,7 +14,12 @@
   <ItemGroup>
     <ProjectReference Include="..\RemoteNotes.BLL\RemoteNotes.BLL.csproj" />
     <ProjectReference Include="..\RemoteNotes.DAL\RemoteNotes.DAL.csproj" />
+    <ProjectReference Include="..\RemoteNotes.Logging\RemoteNotes.Logging.csproj" />
     <ProjectReference Include="..\RemoteNotes.Service.Front\RemoteNotes.Service.Front.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Configuration" />
   </ItemGroup>
 
 </Project>
