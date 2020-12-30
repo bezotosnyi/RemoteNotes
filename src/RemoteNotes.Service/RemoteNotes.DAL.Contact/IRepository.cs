@@ -7,9 +7,9 @@ namespace RemoteNotes.DAL.Contact
 {
     public interface IRepository<TEntity> : IDisposable where TEntity : BaseEntity
     {
-        IQueryable<TEntity> FindAll(bool trackChanges);
+        IQueryable<TEntity> FindAll(bool trackChanges = false);
 
-        IQueryable<TEntity> FindByCondition(Expression<Func<TEntity, bool>> filter, bool trackChanges);
+        IQueryable<TEntity> FindByCondition(Expression<Func<TEntity, bool>> filter, bool trackChanges = false);
 
         TEntity FindById(object id);
 

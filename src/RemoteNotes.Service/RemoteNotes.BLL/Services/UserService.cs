@@ -19,7 +19,7 @@ namespace RemoteNotes.BLL.Services
 
         public UserDTO Login(string login, string password) =>
             _currentRepository
-                .FindByCondition(_ => _.Login.Equals(login) && _.Password.Equals(password), false)
+                .FindByCondition(_ => _.Login.Equals(login) && _.Password.Equals(password))
                 .AsEnumerable()
                 .Select(_mapper.Map<User, UserDTO>)
                 .First();
@@ -28,7 +28,7 @@ namespace RemoteNotes.BLL.Services
         {
             var domainUser = _mapper.Map<UserDTO, User>(user);
             if (_currentRepository
-                .FindByCondition(_ => _.Login.Equals(domainUser.Login), false)
+                .FindByCondition(_ => _.Login.Equals(domainUser.Login))
                 .Any())
             {
                 throw new OperationCanceledException($"User {domainUser.Login} has already bean exist.");

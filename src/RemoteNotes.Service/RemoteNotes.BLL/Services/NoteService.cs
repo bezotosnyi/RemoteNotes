@@ -18,7 +18,7 @@ namespace RemoteNotes.BLL.Services
         }
 
         public IEnumerable<NoteDTO> GetNotes(int accountId) =>
-            _currentRepository.FindByCondition(_ => _.UserId == accountId, false).AsEnumerable()
+            _currentRepository.FindByCondition(_ => _.UserId == accountId).AsEnumerable()
                 .Select(_mapper.Map<Note, NoteDTO>);
     }
 }

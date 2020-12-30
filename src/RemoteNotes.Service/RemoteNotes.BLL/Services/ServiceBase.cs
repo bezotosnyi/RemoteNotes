@@ -18,7 +18,7 @@ namespace RemoteNotes.BLL.Services
         protected readonly IUnitOfWork _unitOfWork;
         protected readonly IRepository<DomainEntity> _currentRepository;
 
-        public ServiceBase(IRemoteNotesLogger<ServiceBase<DomainEntity, DTO>> logger, IMapper mapper, IUnitOfWork unitOfWork,
+        protected ServiceBase(IRemoteNotesLogger<ServiceBase<DomainEntity, DTO>> logger, IMapper mapper, IUnitOfWork unitOfWork,
             IRepository<DomainEntity> currentRepository)
         {
             _logger = logger;
@@ -61,7 +61,7 @@ namespace RemoteNotes.BLL.Services
 
         public virtual IEnumerable<DTO> Get()
         {
-            var entities = _currentRepository.FindAll(false);
+            var entities = _currentRepository.FindAll();
             return entities.AsEnumerable().Select(_mapper.Map<DomainEntity, DTO>);
         }
 

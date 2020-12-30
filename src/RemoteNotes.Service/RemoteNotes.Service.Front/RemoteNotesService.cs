@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using RemoteNotes.BLL.Contract;
@@ -30,7 +31,7 @@ namespace RemoteNotes.Service.Front
 
         public OperationStatusInfo<UserDTO> Login(string login, string password)
         {
-            _logger.Info($"User {GetClientAddress()} invoked {nameof(Login)} method.");
+            _logger.Info($"User '{GetClientAddress()}' invoking {nameof(Login)} method.");
             try
             {
                 var loggedUser = _userService.Login(login, password);
@@ -45,7 +46,7 @@ namespace RemoteNotes.Service.Front
 
         public OperationStatusInfo<UserDTO> Registration(UserDTO user)
         {
-            _logger.Info($"User {GetClientAddress()} invoked {nameof(Registration)} method.");
+            _logger.Info($"User '{GetClientAddress()}' invoking {nameof(Registration)} method.");
             try
             {
                 var registeredUser = _userService.Registration(user);
@@ -59,7 +60,7 @@ namespace RemoteNotes.Service.Front
 
         public OperationStatusInfo<NoteDTO> AddNote(NoteDTO note)
         {
-            _logger.Info($"User {GetClientAddress()} invoked {nameof(AddNote)} method.");
+            _logger.Info($"User '{GetClientAddress()}' invoking {nameof(AddNote)} method.");
             try
             {
                 var addedNote = _noteService.Add(note);
@@ -73,7 +74,7 @@ namespace RemoteNotes.Service.Front
 
         public OperationStatusInfo<NoteDTO> EditNote(NoteDTO note)
         {
-            _logger.Info($"User {GetClientAddress()} invoked {nameof(EditNote)} method.");
+            _logger.Info($"User '{GetClientAddress()}' invoking {nameof(EditNote)} method.");
             try
             {
                 var updatedNote = _noteService.Update(note);
@@ -87,7 +88,7 @@ namespace RemoteNotes.Service.Front
 
         public OperationStatusInfo<bool> DeleteNote(int noteId)
         {
-            _logger.Info($"User {GetClientAddress()} invoked {nameof(DeleteNote)} method.");
+            _logger.Info($"User '{GetClientAddress()}' invoking {nameof(DeleteNote)} method.");
             try
             {
                 var isDeleted = _noteService.Delete(noteId);
@@ -102,7 +103,7 @@ namespace RemoteNotes.Service.Front
 
         public OperationStatusInfo<List<NoteDTO>> GetNotes(int accountId)
         {
-            _logger.Info($"User {GetClientAddress()} invoked {nameof(GetNotes)} method.");
+            _logger.Info($"User '{GetClientAddress()}' invoking {nameof(GetNotes)} method.");
             try
             {
                 var notes = _noteService.GetNotes(accountId).ToList();
@@ -114,16 +115,9 @@ namespace RemoteNotes.Service.Front
             }
         }
 
-        private static string GetClientAddress()
+        private OperationStatusInfo<T> GetSuccessOperationStatusInfo<T>(T obj, [CallerMemberName] string memberName = "")
         {
-            var context = OperationContext.Current;
-            var prop = context.IncomingMessageProperties;
-            var endpoint = prop[RemoteEndpointMessageProperty.Name] as RemoteEndpointMessageProperty;
-            return $"{endpoint?.Address}:{endpoint?.Port}";
-        }
-
-        private OperationStatusInfo<T> GetSuccessOperationStatusInfo<T>(T obj)
-        {
+            _logger.Info($"User '{GetClientAddress()}' success invoked {memberName} method.");
             return new OperationStatusInfo<T>
             {
                 AttachedObject = obj,
@@ -131,16 +125,25 @@ namespace RemoteNotes.Service.Front
             };
         }
 
-        private OperationStatusInfo<T> GetFailOperationStatusInfo<T>(Exception ex)
+        private OperationStatusInfo<T> GetFailOperationStatusInfo<T>(Exception ex, [CallerMemberName] string memberName = "")
         {
             var errorMessage =
-                $"The following exception was thrown: '{ex.Message}'. Stack trace: '{ex.StackTrace}'.";
+                $"The following exception was thrown when user '{GetClientAddress()}' invoking {memberName} method: " +
+                $"'{ex.Message}'. Stack trace: '{ex.StackTrace}'.";
             _logger.Error(errorMessage);
             return new OperationStatusInfo<T>
             {
                 AttachedInfo = errorMessage,
                 OperationStatus = OperationStatus.Fail
             };
+        }
+
+        private static string GetClientAddress()
+        {
+            var context = OperationContext.Current;
+            var prop = context.IncomingMessageProperties;
+            var endpoint = prop[RemoteEndpointMessageProperty.Name] as RemoteEndpointMessageProperty;
+            return $"{endpoint?.Address}:{endpoint?.Port}";
         }
     }
 }
