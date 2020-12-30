@@ -1,5 +1,6 @@
 ﻿using System.Configuration;
 using Autofac;
+using AutoMapper.Contrib.Autofac.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using RemoteNotes.DAL;
 using RemoteNotes.DAL.Contact;
@@ -33,6 +34,9 @@ namespace RemoteNotes.Service.Front.Host.Configuration
             containerBuilder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
 
             // BLL dependencies
+
+            // AutoMapper
+            containerBuilder.RegisterAutoMapper(expression => expression.AddProfile(new AutoMapperProfile()));
 
             // WCF
             containerBuilder.RegisterType<RemoteNotesService>().As<IRemoteNotesService>();
