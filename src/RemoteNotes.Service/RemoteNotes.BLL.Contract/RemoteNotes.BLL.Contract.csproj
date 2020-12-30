@@ -4,4 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RemoteNotes.DAL.Core\RemoteNotes.DAL.Core.csproj" />
+    <ProjectReference Include="..\RemoteNotes.Service.Domain\RemoteNotes.Service.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
