@@ -2,13 +2,17 @@
 using Autofac;
 using AutoMapper.Contrib.Autofac.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using RemoteNotes.BLL.Contract;
+using RemoteNotes.BLL.Services;
 using RemoteNotes.DAL;
 using RemoteNotes.DAL.Contact;
-using RemoteNotes.DAL.Domain.Entities;
 using RemoteNotes.DAL.Repositories;
 using RemoteNotes.Logging;
 using RemoteNotes.Logging.Contract;
 using RemoteNotes.Service.Front.Contract;
+using Account = RemoteNotes.DAL.Domain.Entities.Account;
+using Note = RemoteNotes.DAL.Domain.Entities.Note;
+using User = RemoteNotes.DAL.Domain.Entities.User;
 
 namespace RemoteNotes.Service.Front.Host.Configuration
 {
@@ -36,9 +40,13 @@ namespace RemoteNotes.Service.Front.Host.Configuration
             containerBuilder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
 
             // BLL dependencies
+            containerBuilder.RegisterGeneric(typeof(ServiceBase<,>)).As(typeof(IServiceBase<,>));
+            containerBuilder.RegisterType<AccountService>().As<IAccountService>();
+            containerBuilder.RegisterType<NoteService>().As<INoteService>();
+            containerBuilder.RegisterType<UserService>().As<IUserService>();
 
             // AutoMapper
-            containerBuilder.RegisterAutoMapper(expression => expression.AddProfile(new AutoMapperProfile()));
+            containerBuilder.RegisterAutoMapper(_ => _.AddProfile(new AutoMapperProfile()));
 
             // logger
             containerBuilder.RegisterGeneric(typeof(RemoteNotesLogger<>)).As(typeof(IRemoteNotesLogger<>));

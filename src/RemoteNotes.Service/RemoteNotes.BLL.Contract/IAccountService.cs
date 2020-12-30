@@ -3,7 +3,7 @@ using RemoteNotes.Service.Domain.DTO;
 
 namespace RemoteNotes.BLL.Contract
 {
-    public interface IAccountService : IBaseService<Account, AccountDTO>
+    public interface IAccountService : IServiceBase<Account, AccountDTO>
     {
     }
 }

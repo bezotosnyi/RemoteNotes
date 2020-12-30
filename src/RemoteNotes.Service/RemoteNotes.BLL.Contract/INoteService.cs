@@ -3,7 +3,7 @@ using RemoteNotes.Service.Domain.DTO;
 
 namespace RemoteNotes.BLL.Contract
 {
-    public interface INoteService : IBaseService<Note, NoteDTO>
+    public interface INoteService : IServiceBase<Note, NoteDTO>
     {
     }
 }

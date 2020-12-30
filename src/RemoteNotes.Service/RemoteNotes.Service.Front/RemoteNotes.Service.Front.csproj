@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RemoteNotes.BLL\RemoteNotes.BLL.csproj" />
     <ProjectReference Include="..\RemoteNotes.Service.Domain\RemoteNotes.Service.Domain.csproj" />
     <ProjectReference Include="..\RemoteNotes.Service.Front.Contract\RemoteNotes.Service.Front.Contract.csproj" />
   </ItemGroup>

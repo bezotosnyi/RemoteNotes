@@ -9,7 +9,7 @@ using RemoteNotes.Service.Domain.DTO;
 
 namespace RemoteNotes.BLL.Services
 {
-    public abstract class ServiceBase<DomainEntity, DTO> : IBaseService<DomainEntity, DTO>
+    public abstract class ServiceBase<DomainEntity, DTO> : IServiceBase<DomainEntity, DTO>
         where DomainEntity : BaseEntity, new()
         where DTO : BaseEntityDTO, new()
     {

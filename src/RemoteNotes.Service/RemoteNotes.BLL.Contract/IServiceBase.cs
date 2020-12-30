@@ -4,7 +4,7 @@ using RemoteNotes.Service.Domain.DTO;
 
 namespace RemoteNotes.BLL.Contract
 {
-    public interface IBaseService<DomainEntity, DTO>
+    public interface IServiceBase<DomainEntity, DTO>
         where DomainEntity : BaseEntity, new() where DTO : BaseEntityDTO, new()
     {
         DTO Add(DTO entity);
