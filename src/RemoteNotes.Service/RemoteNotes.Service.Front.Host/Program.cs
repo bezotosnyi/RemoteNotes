@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Configuration;
 using System.ServiceModel;
-using System.ServiceModel.Description;
-using System.ServiceModel.Web;
 using Autofac;
 using Autofac.Integration.Wcf;
 using RemoteNotes.Logging.Contract;
@@ -18,12 +16,8 @@ namespace RemoteNotes.Service.Front.Host
             using (var container = AutofacConfig.Configure())
             {
                 var uri = new Uri(ConfigurationManager.AppSettings["uri"]);
-                using (var serviceHost = new WebServiceHost(typeof(RemoteNotesService)))
+                using (var serviceHost = new ServiceHost(typeof(RemoteNotesService), uri))
                 {
-                    var serviceEndpoint =
-                        serviceHost.AddServiceEndpoint(typeof(IRemoteNotesService), new WebHttpBinding(), uri);
-                    serviceEndpoint.Behaviors.Add(new WebHttpBehavior());
-
                     var logger = container.Resolve<IRemoteNotesLogger<Program>>();
 
                     try
