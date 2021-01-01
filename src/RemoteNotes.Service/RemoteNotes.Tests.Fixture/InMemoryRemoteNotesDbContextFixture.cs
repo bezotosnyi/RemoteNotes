@@ -4,16 +4,16 @@ using RemoteNotes.DAL;
 
 namespace RemoteNotes.Tests.Fixture
 {
-    public class InMemoryDatabaseFixture : IDisposable
+    public class InMemoryRemoteNotesDbContextFixture : IDisposable
     {
-        private readonly string DatabaseName = Guid.NewGuid().ToString();
+        private readonly string _databaseName = Guid.NewGuid().ToString();
 
         public RemoteNotesDbContext DbContext { get; }
 
-        public InMemoryDatabaseFixture()
+        public InMemoryRemoteNotesDbContextFixture()
         {
             var options = new DbContextOptionsBuilder<RemoteNotesDbContext>()
-                .UseInMemoryDatabase(databaseName: DatabaseName)
+                .UseInMemoryDatabase(databaseName: _databaseName)
                 .Options;
             DbContext = new RemoteNotesDbContext(options);
         }

@@ -3,13 +3,13 @@ using Xunit;
 
 namespace RemoteNotes.DAL.Tests.Integration
 {
-    public class RemoteNotesDbContextTests : IClassFixture<InMemoryDatabaseFixture>
+    public class RemoteNotesDbContextTests : IClassFixture<InMemoryRemoteNotesDbContextFixture>
     {
         private readonly RemoteNotesDbContext _sut;
 
-        public RemoteNotesDbContextTests(InMemoryDatabaseFixture inMemoryDatabaseFixture)
+        public RemoteNotesDbContextTests(InMemoryRemoteNotesDbContextFixture inMemoryRemoteNotesDbContextFixture)
         {
-            _sut = inMemoryDatabaseFixture.DbContext;
+            _sut = inMemoryRemoteNotesDbContextFixture.DbContext;
         }
 
         [Fact]
