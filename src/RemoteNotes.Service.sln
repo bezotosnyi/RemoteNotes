@@ -27,11 +27,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoteNotes.Logging", "Remo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{14F0FB33-3884-403D-A1BD-0F8BABAE2E93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteNotes.DAL.Tests.Unit", "RemoteNotes.Service\RemoteNotes.DAL.Tests.Unit\RemoteNotes.DAL.Tests.Unit.csproj", "{4D25EE96-8639-4B68-8315-506E15A27429}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoteNotes.DAL.Tests.Unit", "RemoteNotes.Service\RemoteNotes.DAL.Tests.Unit\RemoteNotes.DAL.Tests.Unit.csproj", "{4D25EE96-8639-4B68-8315-506E15A27429}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteNotes.DAL.Tests.Integration", "RemoteNotes.Service\RemoteNotes.DAL.Tests.Integration\RemoteNotes.DAL.Tests.Integration.csproj", "{43BD44A1-7FEC-4D79-8601-0EA0A61D703E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoteNotes.DAL.Tests.Integration", "RemoteNotes.Service\RemoteNotes.DAL.Tests.Integration\RemoteNotes.DAL.Tests.Integration.csproj", "{43BD44A1-7FEC-4D79-8601-0EA0A61D703E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteNotes.Tests.Fixture", "RemoteNotes.Service\RemoteNotes.Tests.Fixture\RemoteNotes.Tests.Fixture.csproj", "{A33D36A4-2936-4279-8693-36337E764B66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoteNotes.Tests.Fixture", "RemoteNotes.Service\RemoteNotes.Tests.Fixture\RemoteNotes.Tests.Fixture.csproj", "{A33D36A4-2936-4279-8693-36337E764B66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteNotes.BLL.Tests.Unit", "RemoteNotes.BLL.Tests.Unit\RemoteNotes.BLL.Tests.Unit.csproj", "{ABBFAC9D-744D-4F1F-AE83-B6C44098A94C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -211,6 +213,18 @@ Global
 		{A33D36A4-2936-4279-8693-36337E764B66}.Release|x64.Build.0 = Release|Any CPU
 		{A33D36A4-2936-4279-8693-36337E764B66}.Release|x86.ActiveCfg = Release|Any CPU
 		{A33D36A4-2936-4279-8693-36337E764B66}.Release|x86.Build.0 = Release|Any CPU
+		{ABBFAC9D-744D-4F1F-AE83-B6C44098A94C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABBFAC9D-744D-4F1F-AE83-B6C44098A94C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABBFAC9D-744D-4F1F-AE83-B6C44098A94C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{ABBFAC9D-744D-4F1F-AE83-B6C44098A94C}.Debug|x64.Build.0 = Debug|Any CPU
+		{ABBFAC9D-744D-4F1F-AE83-B6C44098A94C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ABBFAC9D-744D-4F1F-AE83-B6C44098A94C}.Debug|x86.Build.0 = Debug|Any CPU
+		{ABBFAC9D-744D-4F1F-AE83-B6C44098A94C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABBFAC9D-744D-4F1F-AE83-B6C44098A94C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABBFAC9D-744D-4F1F-AE83-B6C44098A94C}.Release|x64.ActiveCfg = Release|Any CPU
+		{ABBFAC9D-744D-4F1F-AE83-B6C44098A94C}.Release|x64.Build.0 = Release|Any CPU
+		{ABBFAC9D-744D-4F1F-AE83-B6C44098A94C}.Release|x86.ActiveCfg = Release|Any CPU
+		{ABBFAC9D-744D-4F1F-AE83-B6C44098A94C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -219,6 +233,7 @@ Global
 		{4D25EE96-8639-4B68-8315-506E15A27429} = {14F0FB33-3884-403D-A1BD-0F8BABAE2E93}
 		{43BD44A1-7FEC-4D79-8601-0EA0A61D703E} = {14F0FB33-3884-403D-A1BD-0F8BABAE2E93}
 		{A33D36A4-2936-4279-8693-36337E764B66} = {14F0FB33-3884-403D-A1BD-0F8BABAE2E93}
+		{ABBFAC9D-744D-4F1F-AE83-B6C44098A94C} = {14F0FB33-3884-403D-A1BD-0F8BABAE2E93}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8493231F-FB0C-417A-9622-A1240738BFE8}

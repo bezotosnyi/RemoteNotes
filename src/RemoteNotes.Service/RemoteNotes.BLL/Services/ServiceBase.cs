@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using RemoteNotes.BLL.Contract;
@@ -21,10 +22,10 @@ namespace RemoteNotes.BLL.Services
         protected ServiceBase(IRemoteNotesLogger<ServiceBase<DomainEntity, DTO>> logger, IMapper mapper, IUnitOfWork unitOfWork,
             IRepository<DomainEntity> currentRepository)
         {
-            _logger = logger;
-            _mapper = mapper;
-            _unitOfWork = unitOfWork;
-            _currentRepository = currentRepository;
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
+            _currentRepository = currentRepository ?? throw new ArgumentNullException(nameof(currentRepository));
         }
 
         public virtual DTO Add(DTO entity)
