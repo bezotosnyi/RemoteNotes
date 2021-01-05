@@ -2,17 +2,16 @@
 
 namespace RemoteNotes.DAL.Domain.Entities
 {
+    [ExcludeFromCodeCoverage]
     public class BaseEntity
     {
         public int Id { get; set; }
 
-        [ExcludeFromCodeCoverage]
         protected bool Equals(BaseEntity other)
         {
             return Id == other.Id;
         }
 
-        [ExcludeFromCodeCoverage]
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -21,7 +20,6 @@ namespace RemoteNotes.DAL.Domain.Entities
             return Equals((BaseEntity) obj);
         }
 
-        [ExcludeFromCodeCoverage]
         public override int GetHashCode()
         {
             return Id;

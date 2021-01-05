@@ -2,6 +2,7 @@
 
 namespace RemoteNotes.DAL.Domain.Entities
 {
+    [ExcludeFromCodeCoverage]
     public class User : BaseEntity
     {
         public Account Account { get; set; }
@@ -12,14 +13,12 @@ namespace RemoteNotes.DAL.Domain.Entities
 
         public bool IsActive { get; set; }
 
-        [ExcludeFromCodeCoverage]
         protected bool Equals(User other)
         {
             return base.Equals(other) && Equals(Account, other.Account) && Login == other.Login &&
                    Password == other.Password && IsActive == other.IsActive;
         }
 
-        [ExcludeFromCodeCoverage]
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -28,7 +27,6 @@ namespace RemoteNotes.DAL.Domain.Entities
             return Equals((User) obj);
         }
 
-        [ExcludeFromCodeCoverage]
         public override int GetHashCode()
         {
             unchecked
