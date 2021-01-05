@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
 
 namespace RemoteNotes.Service.Domain.DTO
@@ -30,6 +31,7 @@ namespace RemoteNotes.Service.Domain.DTO
         [DataMember]
         public string Email { get; set; }
 
+        [ExcludeFromCodeCoverage]
         protected bool Equals(AccountDTO other)
         {
             return base.Equals(other) && CreateTime.Equals(other.CreateTime) && ModifyTime.Equals(other.ModifyTime) &&
@@ -37,6 +39,7 @@ namespace RemoteNotes.Service.Domain.DTO
                    Nickname == other.Nickname && Birthday.Equals(other.Birthday) && Email == other.Email;
         }
 
+        [ExcludeFromCodeCoverage]
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -45,6 +48,7 @@ namespace RemoteNotes.Service.Domain.DTO
             return Equals((AccountDTO) obj);
         }
 
+        [ExcludeFromCodeCoverage]
         public override int GetHashCode()
         {
             unchecked

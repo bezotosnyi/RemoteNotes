@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Runtime.Serialization;
 
 namespace RemoteNotes.Service.Domain.DTO
 {
@@ -17,12 +18,14 @@ namespace RemoteNotes.Service.Domain.DTO
         [DataMember]
         public bool IsActive { get; set; }
 
+        [ExcludeFromCodeCoverage]
         protected bool Equals(UserDTO other)
         {
             return base.Equals(other) && Equals(Account, other.Account) && Login == other.Login &&
                    Password == other.Password && IsActive == other.IsActive;
         }
 
+        [ExcludeFromCodeCoverage]
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -31,6 +34,7 @@ namespace RemoteNotes.Service.Domain.DTO
             return Equals((UserDTO) obj);
         }
 
+        [ExcludeFromCodeCoverage]
         public override int GetHashCode()
         {
             unchecked

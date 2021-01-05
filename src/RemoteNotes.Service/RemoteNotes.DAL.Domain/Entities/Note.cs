@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace RemoteNotes.DAL.Domain.Entities
 {
@@ -17,6 +18,7 @@ namespace RemoteNotes.DAL.Domain.Entities
 
         public DateTime ModifyTime { get; set; }
 
+        [ExcludeFromCodeCoverage]
         protected bool Equals(Note other)
         {
             return base.Equals(other) && UserId == other.UserId && Equals(Account, other.Account) &&
@@ -24,6 +26,7 @@ namespace RemoteNotes.DAL.Domain.Entities
                    PublishTime.Equals(other.PublishTime) && ModifyTime.Equals(other.ModifyTime);
         }
 
+        [ExcludeFromCodeCoverage]
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -32,6 +35,7 @@ namespace RemoteNotes.DAL.Domain.Entities
             return Equals((Note) obj);
         }
 
+        [ExcludeFromCodeCoverage]
         public override int GetHashCode()
         {
             unchecked

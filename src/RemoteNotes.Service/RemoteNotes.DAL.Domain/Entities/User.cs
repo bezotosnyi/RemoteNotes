@@ -1,4 +1,6 @@
-﻿namespace RemoteNotes.DAL.Domain.Entities
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace RemoteNotes.DAL.Domain.Entities
 {
     public class User : BaseEntity
     {
@@ -10,12 +12,14 @@
 
         public bool IsActive { get; set; }
 
+        [ExcludeFromCodeCoverage]
         protected bool Equals(User other)
         {
             return base.Equals(other) && Equals(Account, other.Account) && Login == other.Login &&
                    Password == other.Password && IsActive == other.IsActive;
         }
 
+        [ExcludeFromCodeCoverage]
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -24,6 +28,7 @@
             return Equals((User) obj);
         }
 
+        [ExcludeFromCodeCoverage]
         public override int GetHashCode()
         {
             unchecked
