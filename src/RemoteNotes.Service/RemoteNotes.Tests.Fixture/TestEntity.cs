@@ -18,7 +18,7 @@ namespace RemoteNotes.Tests.Fixture
                 return true;
             }
 
-            if (obj.GetType() != this.GetType())
+            if (obj.GetType() != GetType())
             {
                 return false;
             }
@@ -26,8 +26,8 @@ namespace RemoteNotes.Tests.Fixture
             return Equals((TestEntity) obj);
         }
 
-        public override int GetHashCode() => (Title != null ? Title.GetHashCode() : 0);
+        public override int GetHashCode() => (Title != null ? Id.GetHashCode() ^ Title.GetHashCode() : 0);
 
-        protected bool Equals(TestEntity other) => Title == other.Title;
+        protected bool Equals(TestEntity other) => Id == other.Id && Title == other.Title;
     }
 }

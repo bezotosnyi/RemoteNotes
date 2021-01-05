@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RemoteNotes.DAL\RemoteNotes.DAL.csproj" />
+    <ProjectReference Include="..\RemoteNotes.Tests.Fixture\RemoteNotes.Tests.Fixture.csproj" />
   </ItemGroup>
 
 </Project>
