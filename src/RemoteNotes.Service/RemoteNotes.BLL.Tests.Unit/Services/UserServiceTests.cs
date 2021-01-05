@@ -73,7 +73,6 @@ namespace RemoteNotes.BLL.Tests.Unit.Services
             _mapperMock.Verify(_ => _.Map<UserDTO, User>(userDTO), Times.Once);
             _currentRepositoryMock.Verify(
                 _ => _.FindByCondition(It.IsAny<Expression<Func<User, bool>>>(), trackChanges), Times.Once);
-
         }
 
         [Fact]

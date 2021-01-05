@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using log4net;
 using log4net.Appender;
 using log4net.Layout;
@@ -7,6 +8,7 @@ using RemoteNotes.Logging.Contract;
 
 namespace RemoteNotes.Logging
 {
+    [ExcludeFromCodeCoverage] // because it's only wrapper on log4net
     public class RemoteNotesLogger<T> : IRemoteNotesLogger<T>
     {
         private readonly ILog _logger;

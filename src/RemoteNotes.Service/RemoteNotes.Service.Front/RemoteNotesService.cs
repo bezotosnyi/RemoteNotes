@@ -141,8 +141,8 @@ namespace RemoteNotes.Service.Front
         private static string GetClientAddress()
         {
             var context = OperationContext.Current;
-            var prop = context.IncomingMessageProperties;
-            var endpoint = prop[RemoteEndpointMessageProperty.Name] as RemoteEndpointMessageProperty;
+            var prop = context?.IncomingMessageProperties;
+            var endpoint = prop?[RemoteEndpointMessageProperty.Name] as RemoteEndpointMessageProperty;
             return $"{endpoint?.Address}:{endpoint?.Port}";
         }
     }
