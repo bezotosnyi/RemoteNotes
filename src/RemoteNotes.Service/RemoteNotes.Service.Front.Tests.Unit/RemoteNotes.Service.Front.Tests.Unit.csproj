@@ -20,8 +20,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\RemoteNotes.Tests.Fixture\RemoteNotes.Tests.Fixture.csproj" />
-  </ItemGroup>
-
 </Project>
